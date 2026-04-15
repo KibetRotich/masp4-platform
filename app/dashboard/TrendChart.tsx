@@ -48,7 +48,7 @@ export default function TrendChart({ trendByYear }: { trendByYear: TrendRow[] })
       }}>
         Farmers reached — trend by year
       </div>
-      <div style={{ padding: '1rem', height: 240 }}>
+      <div style={{ padding: '.6rem', height: 160 }}>
         {trendByYear.length === 0
           ? (
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', color: '#bbb', fontSize: '.68rem', textAlign: 'center', lineHeight: 1.6 }}>

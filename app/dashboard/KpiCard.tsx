@@ -134,7 +134,7 @@ export default function KpiCard({ kpi, color, trend }: KpiProps) {
     <div className="cc" style={{ borderTop: `3px solid ${color}`, padding: 0, overflow: 'hidden' }}>
 
       {/* Top section — headline number + disaggregation */}
-      <div style={{ padding: '.75rem .9rem .6rem' }}>
+      <div style={{ padding: '.5rem .7rem .4rem' }}>
 
         {/* Code badge + title + headline count */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '.6rem' }}>
@@ -148,12 +148,12 @@ export default function KpiCard({ kpi, color, trend }: KpiProps) {
             }}>
               {kpi.code}
             </span>
-            <div style={{ fontSize: '.7rem', fontWeight: 700, color: '#333', lineHeight: 1.3, maxWidth: 160 }}>
+            <div style={{ fontSize: '.65rem', fontWeight: 700, color: '#333', lineHeight: 1.3, maxWidth: 130 }}>
               {kpi.label}
             </div>
           </div>
           <div style={{ textAlign: 'right', marginLeft: '.5rem', flexShrink: 0 }}>
-            <div style={{ fontSize: '1.9rem', fontWeight: 800, color: '#111', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>
+            <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#111', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>
               {kpi.count.toLocaleString()}
             </div>
             {kpi.estimated && kpi.sampleSize != null && (
@@ -224,7 +224,7 @@ export default function KpiCard({ kpi, color, trend }: KpiProps) {
       </div>
 
       {/* Bar chart — Target vs Achievement across 5 years */}
-      <div style={{ borderTop: '1px solid #f0f0f0', padding: '.5rem .7rem .6rem', height: 160 }}>
+      <div style={{ borderTop: '1px solid #f0f0f0', padding: '.3rem .5rem .4rem', height: 110 }}>
         <KpiBarChart trend={trend} color={color} />
       </div>
 

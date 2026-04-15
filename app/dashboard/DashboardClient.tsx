@@ -110,10 +110,10 @@ export default function DashboardClient({
       </div>
 
       {/* Summary banner */}
-      <div className="g5" style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: '.8rem', marginBottom: '.9rem' }}>
+      <div className="g5" style={{ display: 'grid', gridTemplateColumns: 'repeat(5,minmax(0,1fr))', gap: '.6rem', marginBottom: '.7rem' }}>
         {summaryCards.map(({ label, value, color, textColor }) => (
-          <div key={label} className="cc" style={{ borderTop: `3px solid ${color}`, padding: '.75rem .9rem' }}>
-            <div style={{ fontSize: '1.9rem', fontWeight: 800, color, lineHeight: 1, marginBottom: 3 }}>
+          <div key={label} className="cc" style={{ borderTop: `3px solid ${color}`, padding: '.5rem .7rem' }}>
+            <div style={{ fontSize: '1.4rem', fontWeight: 800, color, lineHeight: 1, marginBottom: 3 }}>
               {value.toLocaleString()}
             </div>
             <div style={{ fontSize: '.62rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.7px', color: '#888' }}>
@@ -124,13 +124,13 @@ export default function DashboardClient({
       </div>
 
       {/* KPI cards grouped by pathway — 4-column layout */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '.8rem', marginBottom: '.9rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,minmax(0,1fr))', gap: '.6rem', marginBottom: '.7rem' }}>
         {(['Production','Services','Governance','Market'] as const).map(pathway => {
           const cards = Object.values(kpis).filter((k: any) => k.pathway === pathway)
           if (!cards.length) return null
           const color = PATHWAY_COLORS[pathway]
           return (
-            <div key={pathway} style={{ display: 'flex', flexDirection: 'column', gap: '.8rem' }}>
+            <div key={pathway} style={{ display: 'flex', flexDirection: 'column', gap: '.5rem' }}>
               <div className="s-hdr">
                 <div className="s-hdr-bar" style={{ background: color }} />
                 <span className="s-hdr-text">{pathway}</span>
