@@ -76,7 +76,7 @@ function KpiBarChart({ trend, color }: { trend: TrendPoint[]; color: string }) {
       {
         label: 'Achievement',
         data: trend.map(r => r.achievement),
-        backgroundColor: color,
+        backgroundColor: '#FFC800',
         borderRadius: 0,
         categoryPercentage: 0.75,
         barPercentage: 0.55,
