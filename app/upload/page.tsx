@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef } from 'react'
+import { useRole } from '@/lib/role-context'
 
 const FORM_IDS = ['FarmerProfile','ServiceProviderProfile','CSOProfile','CompanyProfile','S61','S62','S21Farmer','S21SP','S25','S63','S64','S65']
 const currentYear = new Date().getFullYear()
@@ -10,6 +11,7 @@ const BLACK  = '#111'
 const YELLOW = '#FFC800'
 
 export default function UploadPage() {
+  const { canEdit } = useRole()
   const fileRef   = useRef<HTMLInputElement>(null)
   const [year,    setYear]    = useState(String(currentYear))
   const [formId,  setFormId]  = useState('')
@@ -155,7 +157,12 @@ export default function UploadPage() {
               Step 4 — Upload CSV File
             </div>
             <div style={{ padding: '.9rem' }}>
-              <form onSubmit={submit} style={{ display: 'flex', flexDirection: 'column', gap: '.8rem' }}>
+              {!canEdit && (
+                <div style={{ background: '#fff3e0', border: '1px solid #ffcc80', borderLeft: '4px solid #e65100', padding: '.6rem .8rem', marginBottom: '.8rem', fontSize: '.65rem', color: '#6d4c00', fontWeight: 600 }}>
+                  View only — CSV uploads require M&amp;E Officer or Admin access.
+                </div>
+              )}
+              <form onSubmit={submit} style={{ display: 'flex', flexDirection: 'column', gap: '.8rem', opacity: canEdit ? 1 : 0.45, pointerEvents: canEdit ? 'auto' : 'none' }}>
 
                 {/* File drop zone */}
                 <div>

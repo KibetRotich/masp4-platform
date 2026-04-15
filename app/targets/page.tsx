@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
+import { useRole } from '@/lib/role-context'
 
 const BASELINE_YEAR = 2026
 const YEARS = [2026, 2027, 2028, 2029, 2030]
@@ -54,6 +55,7 @@ const EMPTY_OUT: OutputEditState = { farmers_trained: '', female_count: '', male
 function fmt(n: number | null | undefined) { return n != null ? n.toLocaleString() : '—' }
 
 export default function TargetsPage() {
+  const { canEdit } = useRole()
   const [year,         setYear]         = useState(String(BASELINE_YEAR))
   const [projects,     setProjects]     = useState<Project[]>([])
   const [targetMap,    setTargetMap]    = useState<Record<string, TargetRow>>({})   // "proj_code:kpi" → row
@@ -302,7 +304,7 @@ export default function TargetsPage() {
                   <th style={{ textAlign: 'right' }}>Female</th>
                   <th style={{ textAlign: 'right' }}>Male</th>
                   <th style={{ textAlign: 'right' }}>Achievement</th>
-                  <th style={{ width: 80 }}></th>
+                  {canEdit && <th style={{ width: 80 }}></th>}
                 </tr>
               </thead>
               <tbody>
@@ -335,7 +337,7 @@ export default function TargetsPage() {
                       {/* Indicator label */}
                       <td style={{ color: '#444', fontWeight: 600 }}>{kpi.label}</td>
 
-                      {isEdit ? (
+                      {isEdit && canEdit ? (
                         <>
                           <td>
                             <input type="number" min={1} placeholder="Required"
@@ -406,21 +408,23 @@ export default function TargetsPage() {
                             )}
                           </td>
 
-                          {/* Actions */}
-                          <td style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>
-                            <button className="btn-secondary"
-                              style={{ padding: '.2rem .5rem', fontSize: '.6rem', marginRight: tgt ? 4 : 0 }}
-                              onClick={() => startEdit(project.project_code, kpi.code)}>
-                              {tgt ? 'Edit' : '+ Add'}
-                            </button>
-                            {tgt && (
-                              <button
-                                style={{ padding: '.2rem .4rem', fontSize: '.6rem', background: 'none', border: '1px solid #ef9a9a', color: '#c62828', cursor: 'pointer' }}
-                                onClick={() => remove(tgt.id)}>
-                                ✕
+                          {/* Actions — M&E Officer / Admin only */}
+                          {canEdit && (
+                            <td style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>
+                              <button className="btn-secondary"
+                                style={{ padding: '.2rem .5rem', fontSize: '.6rem', marginRight: tgt ? 4 : 0 }}
+                                onClick={() => startEdit(project.project_code, kpi.code)}>
+                                {tgt ? 'Edit' : '+ Add'}
                               </button>
-                            )}
-                          </td>
+                              {tgt && (
+                                <button
+                                  style={{ padding: '.2rem .4rem', fontSize: '.6rem', background: 'none', border: '1px solid #ef9a9a', color: '#c62828', cursor: 'pointer' }}
+                                  onClick={() => remove(tgt.id)}>
+                                  ✕
+                                </button>
+                              )}
+                            </td>
+                          )}
                         </>
                       )}
                     </tr>
@@ -452,7 +456,7 @@ export default function TargetsPage() {
                     {/* Annual target */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: '.4rem', marginLeft: 'auto' }}>
                       <span style={{ fontSize: '.54rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.5px', color: '#888' }}>Annual target</span>
-                      {isTgtEdit ? (
+                      {isTgtEdit && canEdit ? (
                         <>
                           <input type="number" min={1} placeholder="Required"
                             value={editVals.target_total}
@@ -481,14 +485,18 @@ export default function TargetsPage() {
                           {outTgt?.target_female != null && (
                             <span style={{ fontSize: '.58rem', color: '#1a3557' }}>F: {outTgt.target_female.toLocaleString()}</span>
                           )}
-                          <button className="btn-secondary"
-                            style={{ padding: '.15rem .45rem', fontSize: '.56rem' }}
-                            onClick={() => startEdit(project.project_code, 'OUT.1')}>
-                            {outTgt ? 'Edit' : '+ Add target'}
-                          </button>
-                          {outTgt && (
-                            <button style={{ padding: '.15rem .35rem', fontSize: '.56rem', background: 'none', border: '1px solid #ef9a9a', color: '#c62828', cursor: 'pointer' }}
-                              onClick={() => remove(outTgt.id)}>✕</button>
+                          {canEdit && (
+                            <>
+                              <button className="btn-secondary"
+                                style={{ padding: '.15rem .45rem', fontSize: '.56rem' }}
+                                onClick={() => startEdit(project.project_code, 'OUT.1')}>
+                                {outTgt ? 'Edit' : '+ Add target'}
+                              </button>
+                              {outTgt && (
+                                <button style={{ padding: '.15rem .35rem', fontSize: '.56rem', background: 'none', border: '1px solid #ef9a9a', color: '#c62828', cursor: 'pointer' }}
+                                  onClick={() => remove(outTgt.id)}>✕</button>
+                              )}
+                            </>
                           )}
                         </>
                       )}
@@ -575,21 +583,25 @@ export default function TargetsPage() {
                                   {qData.channel_notes && (
                                     <div style={{ fontSize: '.48rem', color: '#aaa', marginTop: 2, fontStyle: 'italic' }}>{qData.channel_notes}</div>
                                   )}
-                                  <div style={{ display: 'flex', gap: 4, marginTop: '.35rem' }}>
-                                    <button className="btn-secondary"
-                                      style={{ padding: '.15rem .4rem', fontSize: '.52rem' }}
-                                      onClick={() => startOutEdit(project.project_code, q)}>Edit</button>
-                                    <button
-                                      style={{ padding: '.15rem .35rem', fontSize: '.52rem', background: 'none', border: '1px solid #ef9a9a', color: '#c62828', cursor: 'pointer' }}
-                                      onClick={() => removeOut(qData.id)}>✕</button>
-                                  </div>
+                                  {canEdit && (
+                                    <div style={{ display: 'flex', gap: 4, marginTop: '.35rem' }}>
+                                      <button className="btn-secondary"
+                                        style={{ padding: '.15rem .4rem', fontSize: '.52rem' }}
+                                        onClick={() => startOutEdit(project.project_code, q)}>Edit</button>
+                                      <button
+                                        style={{ padding: '.15rem .35rem', fontSize: '.52rem', background: 'none', border: '1px solid #ef9a9a', color: '#c62828', cursor: 'pointer' }}
+                                        onClick={() => removeOut(qData.id)}>✕</button>
+                                    </div>
+                                  )}
                                 </>
-                              ) : (
+                              ) : canEdit ? (
                                 <button className="btn-secondary"
                                   style={{ padding: '.2rem .5rem', fontSize: '.56rem', marginTop: '.25rem' }}
                                   onClick={() => startOutEdit(project.project_code, q)}>
                                   + Enter
                                 </button>
+                              ) : (
+                                <div style={{ fontSize: '.52rem', color: '#ccc', fontStyle: 'italic', marginTop: '.3rem' }}>—</div>
                               )}
                             </div>
                           )}

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { RoleProvider } from '@/lib/role-context'
 
 export const metadata: Metadata = {
   title: 'MASP IV Data Platform — Solidaridad ECA',
@@ -45,7 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 MASP IV · Data Platform
               </div>
               <div style={{ fontSize: '.56rem', fontWeight: 800, color: '#000', letterSpacing: '1.5px', textTransform: 'uppercase', marginTop: 2 }}>
-                East &amp; Central Africa &middot; 2025–2030
+                East &amp; Central Africa &middot; 2026–2030
               </div>
             </div>
           </div>
@@ -78,7 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* ── Content ─────────────────────────────────────────────────────── */}
         <main style={{ padding: '.9rem 1.4rem 4rem' }}>
-          {children}
+          <RoleProvider>{children}</RoleProvider>
         </main>
 
         {/* ── Footer ──────────────────────────────────────────────────────── */}
@@ -93,7 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             &copy; Solidaridad East &amp; Central Africa
           </span>
           <span style={{ color: '#FFC800', fontWeight: 800, fontSize: '.6rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
-            MASP IV · 2025–2030
+            MASP IV · 2026–2030
           </span>
         </footer>
 
