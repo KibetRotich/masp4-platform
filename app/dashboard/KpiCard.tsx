@@ -181,10 +181,10 @@ export default function KpiCard({ kpi, color, trend }: KpiProps) {
         {/* Disaggregation bars */}
         {hasDisagg && kpi.count > 0 && (
           <div style={{ borderTop: '1px solid #f2f2f2', paddingTop: '.45rem', marginTop: '.2rem' }}>
-            <DisaggBar value={kpi.female!} max={kpi.count} color="#1a3557" label="Female"    />
-            <DisaggBar value={kpi.male!}   max={kpi.count} color="#888"    label="Male"      />
+            <DisaggBar value={kpi.female!} max={kpi.count} color="#FFC800" label="Female"    />
+            <DisaggBar value={kpi.male!}   max={kpi.count} color="#111"    label="Male"      />
             {kpi.youth !== undefined && (
-              <DisaggBar value={kpi.youth} max={kpi.count} color="#e65100" label="Youth ≤35" />
+              <DisaggBar value={kpi.youth} max={kpi.count} color="#888"    label="Youth ≤35" />
             )}
           </div>
         )}

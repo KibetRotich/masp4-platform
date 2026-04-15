@@ -23,9 +23,9 @@ interface Props {
 
 const PATHWAY_COLORS: Record<string, string> = {
   Production: '#FFC800',
-  Services:   '#1a3557',
-  Governance: '#e65100',
-  Market:     '#2e7d32',
+  Services:   '#111',
+  Governance: '#111',
+  Market:     '#111',
 }
 
 const YEARS = ['2026','2027','2028','2029','2030']
@@ -52,9 +52,9 @@ export default function DashboardClient({
 
   const summaryCards = [
     { label: 'Farmers trained / reached', value: totalFarmers,        color: '#FFC800', textColor: '#000' },
-    { label: 'Female (output)',           value: totalFemale,         color: '#1a3557', textColor: '#fff' },
-    { label: 'Youth ≤35 (output)',        value: totalYouth,          color: '#e65100', textColor: '#fff' },
-    { label: 'Companies engaged',        value: totalCompanies,       color: '#2e7d32', textColor: '#fff' },
+    { label: 'Female (output)',           value: totalFemale,         color: '#111',    textColor: '#fff' },
+    { label: 'Youth ≤35 (output)',        value: totalYouth,          color: '#111',    textColor: '#fff' },
+    { label: 'Companies engaged',        value: totalCompanies,       color: '#111',    textColor: '#fff' },
     { label: 'Regulations improved',     value: kpis.s63.count,       color: '#111',    textColor: '#fff' },
   ]
 
