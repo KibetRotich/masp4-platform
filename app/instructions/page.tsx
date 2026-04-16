@@ -424,59 +424,6 @@ export default function InstructionsPage() {
       </Section>
 
       {/* Adding a new project */}
-      <Section title="Adding a New Project (Targets &amp; Achievements)" color={GREEN}>
-        <Card>
-          <div style={{ fontSize: '0.68rem', color: '#333', lineHeight: 1.7, marginBottom: '.8rem' }}>
-            New projects must be registered in the database before targets can be entered or survey data uploaded.
-            Only an <strong>M&amp;E Officer</strong> or <strong>Admin</strong> can add projects. Follow these steps:
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '.7rem' }}>
-            <div>
-              <Step n={1} title="Run the SQL insert in Supabase">
-                Open the Supabase SQL Editor and run an INSERT into the <code>projects</code> table. Required fields:
-                <code> project_code</code> (unique, e.g. <code>KE-NEW-001</code>), <code>project_name</code>,
-                <code> country</code>, <code>commodity</code>, <code>start_year</code>, <code>end_year</code>.
-                Use the seed file <code>pipeline/masp4_seed_projects_2026.sql</code> as a template.
-              </Step>
-              <Step n={2} title="Verify commodity and country values">
-                <code>country</code> must match exactly: <em>Kenya, Uganda, Tanzania,</em> or <em>Ethiopia</em>.
-                <code> commodity</code> must be one of the registered enum values: Coffee, Tea, F&amp;V, Gold, Dairy,
-                Leather, Cotton, Fashion, Palm Oil, Cocoa. If your commodity is not listed, add it first with
-                <code> ALTER TYPE commodity_enum ADD VALUE IF NOT EXISTS '...'</code>.
-              </Step>
-              <Step n={3} title="Confirm the project appears in the platform">
-                Reload the <strong>Targets &amp; Achievements</strong> tab. The new project should appear as a card.
-                If it does not appear, check that <code>country</code> and <code>commodity</code> are spelled
-                exactly as the platform expects (case-sensitive).
-              </Step>
-            </div>
-            <div>
-              <Step n={4} title="Enter annual outcome KPI targets">
-                On the project card in <strong>Targets &amp; Achievements</strong>, click <em>+ Add</em> next to
-                each of the 7 outcome KPIs (S6.1–S6.5). Enter the logframe annual target total and, where available,
-                gender-disaggregated targets (female / male). Then scroll to the <strong>REC Indicators</strong>
-                section and add annual targets for any applicable REC01–REC05 indicators. Targets are year-specific.
-              </Step>
-              <Step n={5} title="Enter the output KPI annual target">
-                On the same project card, scroll to the yellow <strong>OUTPUT</strong> section and click
-                <em> + Add target</em>. Enter the annual target for Farmers Trained / Reached. This should reflect
-                the total headcount across all delivery channels (training events, TV/radio, demo farms, digital)
-                as planned for the year.
-              </Step>
-              <Step n={6} title="Enter quarterly output actuals each quarter">
-                At the end of each quarter, enter the actual headcount in the Q1–Q4 tiles of the OUTPUT section.
-                Include female and youth disaggregation where available. The annual achievement column sums
-                the four quarters automatically and shows a % against the annual target.
-              </Step>
-            </div>
-          </div>
-          <div style={{ marginTop: '.7rem', padding: '.6rem .8rem', background: '#e8f5e9', border: '1px solid #a5d6a7', fontSize: '0.64rem', color: '#1b5e20', lineHeight: 1.7 }}>
-            <strong>Project codes must be consistent</strong> across the database, the KoboToolbox form (<code>_project_code</code>),
-            and any CSV exports. A mismatch will cause uploads to fail with a "project not found" error.
-          </div>
-        </Card>
-      </Section>
-
       {/* Footer note */}
       <div style={{ borderTop: '1px solid #d0d0d0', paddingTop: '.9rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '.5rem' }}>
         <div style={{ fontSize: '0.6rem', color: '#aaa', textTransform: 'uppercase', letterSpacing: '.8px' }}>
