@@ -84,23 +84,12 @@ export default function DashboardClient({
                 style={{ paddingRight: '1.4rem', minWidth: 120 }}
               >
                 <option value="">{placeholder}</option>
-                {opts.map(o => <option key={o} value={o}>{o}{key === 'year' && o === '2026' ? ' (Baseline)' : ''}</option>)}
+                {opts.map(o => <option key={o} value={o}>{o}</option>)}
               </select>
               <span style={{ position: 'absolute', right: 6, top: '50%', transform: 'translateY(-50%)', fontSize: 10, color: '#888', pointerEvents: 'none' }}>▾</span>
             </div>
           </div>
         ))}
-
-        {currentYear === '2026' && (
-          <span style={{
-            background: '#e0e0e0', color: '#555',
-            fontSize: '.52rem', fontWeight: 800,
-            textTransform: 'uppercase', letterSpacing: '.8px',
-            padding: '.15rem .5rem', marginLeft: '.25rem',
-          }}>
-            Baseline year — sample counts shown; achievements calculated from 2027
-          </span>
-        )}
 
         {(currentYear || currentCountry || currentCommodity) && (
           <button className="btn-secondary" onClick={() => nav({ year: '', country: '', commodity: '' })} style={{ marginLeft: 'auto' }}>

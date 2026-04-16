@@ -111,8 +111,8 @@ export default function InstructionsPage() {
             REC indicators are entered directly in the Targets &amp; Achievements tab as annual counts.
             The system distinguishes between two measurement approaches — <em>sample-based extrapolation</em> for
             farmer-level production KPIs, and <em>direct counting</em> for institutional, company, and REC KPIs.
-            <strong> 2026 is the Baseline Year</strong> — survey data collected this year establishes reference values;
-            achievement comparisons begin from 2027.
+            <strong> 2026 is the first year of MASP IV</strong>, continuing directly from the MASP III cycle (2021–2025).
+            Survey data collected from 2026 onwards is counted towards programme achievements from day one.
           </p>
         </Card>
       </Section>
@@ -132,7 +132,7 @@ export default function InstructionsPage() {
             </thead>
             <tbody>
               <KpiRow code="S6.1" label="Farmers with enhanced resilience"        pathway="Production"  color={YELLOW} method="sample"
-                description="Farmers whose Resilience Index (0–35) improved from baseline. Index sums 7 sub-scores: soil health (C:N ratio), collective membership, local decision-making, income stability, shock recovery, savings buffer, income diversification." />
+                description="Farmers whose Resilience Index (0–35) improved from their 2026 reference score. Index sums 7 sub-scores: soil health (C:N ratio), collective membership, local decision-making, income stability, shock recovery, savings buffer, income diversification." />
               <KpiRow code="S6.2" label="Farmers with improved farm viability"    pathway="Production"  color={YELLOW} method="sample"
                 description="Farmers whose Farm Viability Index (0–30) exceeds 33% threshold (score > 10). Index sums 6 sub-scores: yield growth, income diversification, income perception, service quality, market access, GAP adoption (of 9 practices)." />
               <KpiRow code="S2.1" label="Farmers accessing new/improved services" pathway="Services"   color={NAVY}   method="sample"
@@ -167,7 +167,7 @@ export default function InstructionsPage() {
               Achievement is <em>extrapolated</em> from the sample to the full target population using a
               post-stratification estimator. Cards in the dashboard show an <span style={{ background: YELLOW, color: '#000',
               fontSize: '0.5rem', fontWeight: 800, textTransform: 'uppercase', padding: '0 .25rem' }}>est.</span> badge.
-              During 2026 (Baseline), raw sample counts are shown — no extrapolation is applied.
+              In 2026, raw sample counts are shown — no extrapolation is applied until sufficient survey data has been collected.
             </div>
           </Card>
           <Card style={{ borderTop: `3px solid ${BLACK}` }}>
@@ -260,7 +260,7 @@ export default function InstructionsPage() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '.6rem', marginTop: '.4rem' }}>
             {[
-              { kpi: 'S6.1', label: 'Threshold', desc: 'Resilience Index ≥ 18/35 (provisional). From 2027: improvement from 2026 baseline score.' },
+              { kpi: 'S6.1', label: 'Threshold', desc: 'Resilience Index ≥ 18/35 (provisional). From 2027: improvement from the 2026 reference score.' },
               { kpi: 'S6.2', label: 'Threshold', desc: 'Farm Viability Index > 10/30 (>33% of maximum — per monitoring protocol).' },
               { kpi: 'S2.1', label: 'Qualifies if', desc: 'Farmer received ≥1 new service OR at least one service quality improved. Confirmed by SP triangulation.' },
             ].map(({ kpi, label, desc }) => (
@@ -274,9 +274,9 @@ export default function InstructionsPage() {
           </div>
 
           <div style={{ marginTop: '.8rem', padding: '.6rem .8rem', background: '#fff3e0', border: '1px solid #ffcc80', fontSize: '0.65rem', color: '#6d4c00', lineHeight: 1.7 }}>
-            <strong>Baseline year note (2026):</strong> No extrapolation is applied in 2026. Raw sample counts are displayed
+            <strong>Note on 2026 data:</strong> No extrapolation is applied in 2026. Raw sample counts are displayed
             as reference values. The post-stratification estimator activates from 2027 onwards, comparing against
-            the 2026 baseline scores.
+            the 2026 reference scores.
           </div>
         </Card>
       </Section>

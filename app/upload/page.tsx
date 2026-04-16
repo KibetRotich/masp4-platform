@@ -203,7 +203,7 @@ export default function UploadPage() {
                   </label>
                   <div style={{ position: 'relative' }}>
                     <select value={year} onChange={e => setYear(e.target.value)} style={{ width: '100%', paddingRight: '1.4rem' }}>
-                      {YEARS.map(y => <option key={y} value={y}>{y}{y === 2026 ? ' (Baseline)' : ''}</option>)}
+                      {YEARS.map(y => <option key={y} value={y}>{y}</option>)}
                     </select>
                     <span style={{ position: 'absolute', right: 8, top: '50%', transform: 'translateY(-50%)', fontSize: 10, color: '#888', pointerEvents: 'none' }}>▾</span>
                   </div>

@@ -243,7 +243,7 @@ export default function TargetsPage() {
     (!filterCommodity || p.commodity    === filterCommodity) &&
     (!filterProject   || p.project_code === filterProject)
   )
-  const isBaseline = year === String(BASELINE_YEAR)
+
 
   return (
     <div>
@@ -265,7 +265,7 @@ export default function TargetsPage() {
         <span style={{ fontSize: '.58rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px', color: '#666' }}>Year</span>
         <div style={{ position: 'relative' }}>
           <select value={year} onChange={e => setYear(e.target.value)} style={{ paddingRight: '1.4rem', minWidth: 130 }}>
-            {YEARS.map(y => <option key={y} value={y}>{y}{y === BASELINE_YEAR ? ' (Baseline)' : ''}</option>)}
+            {YEARS.map(y => <option key={y} value={y}>{y}</option>)}
           </select>
           <span style={{ position: 'absolute', right: 6, top: '50%', transform: 'translateY(-50%)', fontSize: 10, color: '#888', pointerEvents: 'none' }}>▾</span>
         </div>
@@ -312,17 +312,6 @@ export default function TargetsPage() {
           <button className="btn-secondary" onClick={() => { setFilterCountry(''); setFilterCommodity(''); setFilterProject('') }} style={{ marginLeft: 'auto' }}>Clear</button>
         )}
 
-        {isBaseline && (
-          <span style={{
-            marginLeft: 'auto',
-            background: '#e0e0e0', color: '#555',
-            fontSize: '.52rem', fontWeight: 800,
-            textTransform: 'uppercase', letterSpacing: '.8px',
-            padding: '.15rem .55rem',
-          }}>
-            Baseline year — achievements are reference values
-          </span>
-        )}
       </div>
 
       {loading ? (
