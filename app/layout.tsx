@@ -15,10 +15,7 @@ const SolLogo = () => (
     alignItems: 'center',
     boxShadow: 'inset 0 0 0 1px rgba(0,0,0,.06)',
   }}>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 42" width="130" height="32" aria-label="Solidaridad">
-      <text x="0" y="26" fontFamily="Open Sans,sans-serif" fontWeight="800" fontSize="23" fill="#000000" letterSpacing="-0.4">Solidaridad</text>
-      <path d="M2,36 C45,27 125,29 170,34" stroke="#FFC800" strokeWidth="4" fill="none" strokeLinecap="round"/>
-    </svg>
+    <img src="/solidaridad-logo.png" alt="Solidaridad" style={{ height: 32, width: 'auto', display: 'block' }} />
   </div>
 )
 
