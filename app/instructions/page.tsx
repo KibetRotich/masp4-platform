@@ -104,11 +104,13 @@ export default function InstructionsPage() {
       <Section title="Overview" color={YELLOW}>
         <Card>
           <p style={{ lineHeight: 1.8, color: '#333' }}>
-            This platform collects, processes, and visualises results for the <strong>seven MASP IV KPIs</strong> across
+            This platform collects, processes, and visualises results for the <strong>twelve MASP IV KPIs</strong> across
             Solidaridad's East &amp; Central Africa programme (Kenya, Uganda, Tanzania, Ethiopia) from 2026 to 2030.
-            Data enters through <strong>KoboToolbox surveys</strong> completed by project teams in the field.
+            These comprise <strong>seven outcome KPIs</strong> (S6.1–S6.5, S2.1, S2.5) and <strong>five Responsible
+            Economy Indicators</strong> (REC01–REC05). Outcome data enters through <strong>KoboToolbox surveys</strong>;
+            REC indicators are entered directly in the Targets &amp; Achievements tab as annual counts.
             The system distinguishes between two measurement approaches — <em>sample-based extrapolation</em> for
-            farmer-level production KPIs, and <em>direct counting</em> for institutional and company KPIs.
+            farmer-level production KPIs, and <em>direct counting</em> for institutional, company, and REC KPIs.
             <strong> 2026 is the Baseline Year</strong> — survey data collected this year establishes reference values;
             achievement comparisons begin from 2027.
           </p>
@@ -143,6 +145,17 @@ export default function InstructionsPage() {
                 description="Direct count of partner companies that have adopted and implemented direct farmer reward mechanisms (e.g. premium payments, bonus schemes). Reported by company respondents." />
               <KpiRow code="S6.5" label="Companies with responsible procurement"  pathway="Market"     color={GREEN}  method="count"
                 description="Direct count of partner companies with responsible procurement policies in place. Scored on 5 criteria: policy document, SMART commitments, action plan, country coverage, third-party verification." />
+              <tr><td colSpan={5} style={{ background: '#111', color: '#FFC800', padding: '.3rem .7rem', fontSize: '.5rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px' }}>Responsible Economy Indicators — entered directly in Targets &amp; Achievements (no KoboToolbox form)</td></tr>
+              <KpiRow code="REC01" label="Processors with reduced pollution"              pathway="Governance" color={BLACK}  method="count"
+                description="Direct count of processors (mills, factories, aggregators) that have adopted verified pollution-reduction measures within the reporting year." />
+              <KpiRow code="REC02" label="Workers under improved working conditions"      pathway="Services"   color={BLACK}  method="count"
+                description="Direct count of workers along the value chain (farm workers, factory workers, casual labourers) whose employment conditions have been demonstrably improved through Solidaridad-supported interventions." />
+              <KpiRow code="REC03" label="Green jobs created"                             pathway="Market"     color={BLACK}  method="count"
+                description="Direct count of new jobs created that contribute to environmental sustainability — including agroforestry, organic certification, environmental monitoring, and climate-smart service delivery roles." />
+              <KpiRow code="REC04" label="CSOs with enhanced capacity in policy processes" pathway="Governance" color={BLACK}  method="count"
+                description="Direct count of civil society organisations that have received capacity-building support and actively engaged in commodity policy or regulatory processes during the reporting year." />
+              <KpiRow code="REC05" label="Farmers receiving premium prices"               pathway="Market"     color={BLACK}  method="count"
+                description="Direct count of smallholder farmers who received a verified price premium above the standard market price as a result of Solidaridad-supported linkages to certification or direct buyer relationships." />
             </tbody>
           </table>
         </Card>
@@ -160,10 +173,10 @@ export default function InstructionsPage() {
           <Card style={{ borderTop: `3px solid ${BLACK}` }}>
             <div style={{ fontSize: '0.6rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '.7px', color: '#888', marginBottom: '.4rem' }}>Count-based KPIs</div>
             <div style={{ fontSize: '0.68rem', color: '#333', lineHeight: 1.7 }}>
-              <strong>S2.5, S6.3, S6.4, S6.5</strong> are direct counts — every qualifying individual,
-              regulation, or company is reported by the responsible respondent (farmer/SP for S2.5,
-              CSO for S6.3, company for S6.4/S6.5). Cards show a
-              <span style={{ background: '#e8e8e8', color: '#444', fontSize: '0.5rem', fontWeight: 800,
+              <strong>S2.5, S6.3, S6.4, S6.5</strong> are direct counts from KoboToolbox submissions.
+              <strong> REC01–REC05</strong> are also direct counts, entered manually each year in the
+              Targets &amp; Achievements tab — no survey form or CSV upload is required for these.
+              Cards show a <span style={{ background: '#e8e8e8', color: '#444', fontSize: '0.5rem', fontWeight: 800,
               textTransform: 'uppercase', padding: '0 .25rem', marginLeft: '.25rem' }}>count</span> badge.
               No sampling or extrapolation is involved.
             </div>
@@ -441,8 +454,8 @@ export default function InstructionsPage() {
               <Step n={4} title="Enter annual outcome KPI targets">
                 On the project card in <strong>Targets &amp; Achievements</strong>, click <em>+ Add</em> next to
                 each of the 7 outcome KPIs (S6.1–S6.5). Enter the logframe annual target total and, where available,
-                gender-disaggregated targets (female / male). Targets are year-specific — enter them for each
-                survey year separately.
+                gender-disaggregated targets (female / male). Then scroll to the <strong>REC Indicators</strong>
+                section and add annual targets for any applicable REC01–REC05 indicators. Targets are year-specific.
               </Step>
               <Step n={5} title="Enter the output KPI annual target">
                 On the same project card, scroll to the yellow <strong>OUTPUT</strong> section and click

@@ -85,13 +85,17 @@ export default function UploadPage() {
                 <div style={{ marginTop: '.5rem', padding: '.4rem .6rem', background: '#fff3e0', border: '1px solid #ffcc80', fontSize: '.62rem', color: '#6d4c00' }}>
                   <strong>Note:</strong> Separate forms for CSO (S6.3) and Company (S6.4/S6.5) respondents are under development (V1.2).
                 </div>
+                <div style={{ marginTop: '.4rem', padding: '.4rem .6rem', background: '#f5f5f5', border: '1px solid #d0d0d0', fontSize: '.62rem', color: '#444' }}>
+                  <strong>REC01–REC05</strong> (Responsible Economy Indicators) are <strong>not uploaded here</strong>.
+                  Enter annual counts directly in the <a href="/targets" style={{ color: BLACK, fontWeight: 700 }}>Targets &amp; Achievements</a> tab.
+                </div>
               </div>
             </div>
           </div>
 
           {/* Deployment checklist */}
           <div className="cc" style={{ padding: 0, overflow: 'hidden', marginBottom: '.8rem' }}>
-            <div style={{ background: '#1a3557', color: '#fff', padding: '.5rem .9rem', fontSize: '.58rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px' }}>
+            <div style={{ background: '#111', color: '#fff', padding: '.5rem .9rem', fontSize: '.58rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px' }}>
               Step 2 — Before Deploying to Enumerators
             </div>
             <div style={{ padding: '.7rem .9rem' }}>
