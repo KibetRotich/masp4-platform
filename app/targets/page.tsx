@@ -663,10 +663,10 @@ export default function TargetsPage() {
               )
             })()}
 
-            {/* ── REC Indicators: Responsible Economy KPIs ── */}
+            {/* ── REC Level Indicators ── */}
             <div style={{ borderTop: '2px solid #111' }}>
               <div style={{ background: '#111', color: '#FFC800', padding: '.4rem .9rem', fontSize: '.58rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px' }}>
-                Responsible Economy Indicators (REC) — Direct Count · Annual
+                REC Level Indicators — Direct Count · Annual
               </div>
               <table style={{ fontSize: '.65rem' }}>
                 <thead>

@@ -86,7 +86,7 @@ export default function UploadPage() {
                   <strong>Note:</strong> Separate forms for CSO (S6.3) and Company (S6.4/S6.5) respondents are under development (V1.2).
                 </div>
                 <div style={{ marginTop: '.4rem', padding: '.4rem .6rem', background: '#f5f5f5', border: '1px solid #d0d0d0', fontSize: '.62rem', color: '#444' }}>
-                  <strong>REC01–REC05</strong> (Responsible Economy Indicators) are <strong>not uploaded here</strong>.
+                  <strong>REC01–REC05</strong> (REC Level Indicators) are <strong>not uploaded here</strong>.
                   Enter annual counts directly in the <a href="/targets" style={{ color: BLACK, fontWeight: 700 }}>Targets &amp; Achievements</a> tab.
                 </div>
               </div>

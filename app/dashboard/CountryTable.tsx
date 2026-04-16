@@ -51,7 +51,7 @@ export default function CountryTable({ byCountry }: { byCountry: CountryRow[] })
                 Outcome KPIs
               </th>
               <th colSpan={5} style={{ textAlign: 'center', fontSize: '.5rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '.5px', color: '#888', paddingBottom: 2, borderBottom: '2px solid #111' }}>
-                Responsible Economy
+                REC Level Indicators
               </th>
             </tr>
             <tr>

@@ -106,8 +106,8 @@ export default function InstructionsPage() {
           <p style={{ lineHeight: 1.8, color: '#333' }}>
             This platform collects, processes, and visualises results for the <strong>twelve MASP IV KPIs</strong> across
             Solidaridad's East &amp; Central Africa programme (Kenya, Uganda, Tanzania, Ethiopia) from 2026 to 2030.
-            These comprise <strong>seven outcome KPIs</strong> (S6.1–S6.5, S2.1, S2.5) and <strong>five Responsible
-            Economy Indicators</strong> (REC01–REC05). Outcome data enters through <strong>KoboToolbox surveys</strong>;
+            These comprise <strong>seven outcome KPIs</strong> (S6.1–S6.5, S2.1, S2.5) and <strong>five REC Level
+            Indicators</strong> (REC01–REC05). Outcome data enters through <strong>KoboToolbox surveys</strong>;
             REC indicators are entered directly in the Targets &amp; Achievements tab as annual counts.
             The system distinguishes between two measurement approaches — <em>sample-based extrapolation</em> for
             farmer-level production KPIs, and <em>direct counting</em> for institutional, company, and REC KPIs.
@@ -145,7 +145,7 @@ export default function InstructionsPage() {
                 description="Direct count of partner companies that have adopted and implemented direct farmer reward mechanisms (e.g. premium payments, bonus schemes). Reported by company respondents." />
               <KpiRow code="S6.5" label="Companies with responsible procurement"  pathway="Market"     color={GREEN}  method="count"
                 description="Direct count of partner companies with responsible procurement policies in place. Scored on 5 criteria: policy document, SMART commitments, action plan, country coverage, third-party verification." />
-              <tr><td colSpan={5} style={{ background: '#111', color: '#FFC800', padding: '.3rem .7rem', fontSize: '.5rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px' }}>Responsible Economy Indicators — entered directly in Targets &amp; Achievements (no KoboToolbox form)</td></tr>
+              <tr><td colSpan={5} style={{ background: '#111', color: '#FFC800', padding: '.3rem .7rem', fontSize: '.5rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px' }}>REC Level Indicators — entered directly in Targets &amp; Achievements (no KoboToolbox form)</td></tr>
               <KpiRow code="REC01" label="Processors with reduced pollution"              pathway="Governance" color={BLACK}  method="count"
                 description="Direct count of processors (mills, factories, aggregators) that have adopted verified pollution-reduction measures within the reporting year." />
               <KpiRow code="REC02" label="Workers under improved working conditions"      pathway="Services"   color={BLACK}  method="count"

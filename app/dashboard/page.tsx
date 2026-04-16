@@ -162,7 +162,7 @@ export default async function DashboardPage({ searchParams }: Props) {
       tier2: sum(s65, 'tier2_count'),
       tier3: sum(s65, 'tier3_count'),
     },
-    // REC KPIs — Responsible Economy Indicators (direct count, manually entered)
+    // REC Level Indicators (direct count, manually entered)
     rec01: { code: 'REC01', label: 'Processors with reduced pollution',              pathway: 'Governance', count: recSum('REC01') },
     rec02: { code: 'REC02', label: 'Workers under improved working conditions',      pathway: 'Services',   count: recSum('REC02') },
     rec03: { code: 'REC03', label: 'Green jobs created',                             pathway: 'Market',     count: recSum('REC03') },
