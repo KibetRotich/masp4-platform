@@ -163,9 +163,9 @@ export default async function DashboardPage({ searchParams }: Props) {
       tier3: sum(s65, 'tier3_count'),
     },
     // REC Level Indicators (direct count, manually entered)
-    rec01: { code: 'REC01', label: 'Processors with reduced pollution',              pathway: 'Governance', count: recSum('REC01') },
-    rec02: { code: 'REC02', label: 'Workers under improved working conditions',      pathway: 'Services',   count: recSum('REC02') },
-    rec03: { code: 'REC03', label: 'Green jobs created',                             pathway: 'Market',     count: recSum('REC03') },
+    rec01: { code: 'REC01', label: 'Processors with reduced pollution',              pathway: 'Production', count: recSum('REC01') },
+    rec02: { code: 'REC02', label: 'Workers under improved working conditions',      pathway: 'Production', count: recSum('REC02') },
+    rec03: { code: 'REC03', label: 'Green jobs created',                             pathway: 'Services',   count: recSum('REC03') },
     rec04: { code: 'REC04', label: 'CSOs with enhanced capacity in policy processes', pathway: 'Governance', count: recSum('REC04') },
     rec05: { code: 'REC05', label: 'Farmers receiving premium prices',               pathway: 'Market',     count: recSum('REC05') },
   }

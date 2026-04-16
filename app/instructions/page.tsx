@@ -146,11 +146,11 @@ export default function InstructionsPage() {
               <KpiRow code="S6.5" label="Companies with responsible procurement"  pathway="Market"     color={GREEN}  method="count"
                 description="Direct count of partner companies with responsible procurement policies in place. Scored on 5 criteria: policy document, SMART commitments, action plan, country coverage, third-party verification." />
               <tr><td colSpan={5} style={{ background: '#111', color: '#FFC800', padding: '.3rem .7rem', fontSize: '.5rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px' }}>REC Level Indicators — entered directly in Targets &amp; Achievements (no KoboToolbox form)</td></tr>
-              <KpiRow code="REC01" label="Processors with reduced pollution"              pathway="Governance" color={BLACK}  method="count"
+              <KpiRow code="REC01" label="Processors with reduced pollution"              pathway="Production" color={YELLOW} method="count"
                 description="Direct count of processors (mills, factories, aggregators) that have adopted verified pollution-reduction measures within the reporting year." />
-              <KpiRow code="REC02" label="Workers under improved working conditions"      pathway="Services"   color={BLACK}  method="count"
+              <KpiRow code="REC02" label="Workers under improved working conditions"      pathway="Production" color={YELLOW} method="count"
                 description="Direct count of workers along the value chain (farm workers, factory workers, casual labourers) whose employment conditions have been demonstrably improved through Solidaridad-supported interventions." />
-              <KpiRow code="REC03" label="Green jobs created"                             pathway="Market"     color={BLACK}  method="count"
+              <KpiRow code="REC03" label="Green jobs created"                             pathway="Services"   color={NAVY}   method="count"
                 description="Direct count of new jobs created that contribute to environmental sustainability — including agroforestry, organic certification, environmental monitoring, and climate-smart service delivery roles." />
               <KpiRow code="REC04" label="CSOs with enhanced capacity in policy processes" pathway="Governance" color={BLACK}  method="count"
                 description="Direct count of civil society organisations that have received capacity-building support and actively engaged in commodity policy or regulatory processes during the reporting year." />
