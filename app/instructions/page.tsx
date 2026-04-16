@@ -106,7 +106,7 @@ export default function InstructionsPage() {
           <p style={{ lineHeight: 1.8, color: '#333' }}>
             This platform collects, processes, and visualises results for the <strong>twelve MASP IV KPIs</strong> across
             Solidaridad's East &amp; Central Africa programme (Kenya, Uganda, Tanzania, Ethiopia) from 2026 to 2030.
-            These comprise <strong>seven outcome KPIs</strong> (S6.1–S6.5, S2.1, S2.5) and <strong>five REC Level
+            These comprise <strong>Network mandated KPIs</strong> (S6.1–S6.5, S2.1, S2.5) and <strong>five REC Level
             Indicators</strong> (REC01–REC05). Outcome data enters through <strong>KoboToolbox surveys</strong>;
             REC indicators are entered directly in the Targets &amp; Achievements tab as annual counts.
             The system distinguishes between two measurement approaches — <em>sample-based extrapolation</em> for
