@@ -112,7 +112,6 @@ export default function InstructionsPage() {
             The system distinguishes between two measurement approaches — <em>sample-based extrapolation</em> for
             farmer-level production KPIs, and <em>direct counting</em> for institutional, company, and REC KPIs.
             <strong> 2026 is the first year of MASP IV</strong>, continuing directly from the MASP III cycle (2021–2025).
-            Survey data collected from 2026 onwards is counted towards programme achievements from day one.
           </p>
         </Card>
       </Section>
@@ -273,11 +272,6 @@ export default function InstructionsPage() {
             ))}
           </div>
 
-          <div style={{ marginTop: '.8rem', padding: '.6rem .8rem', background: '#fff3e0', border: '1px solid #ffcc80', fontSize: '0.65rem', color: '#6d4c00', lineHeight: 1.7 }}>
-            <strong>Note on 2026 data:</strong> No extrapolation is applied in 2026. Raw sample counts are displayed
-            as reference values. The post-stratification estimator activates from 2027 onwards, comparing against
-            the 2026 reference scores.
-          </div>
         </Card>
       </Section>
 
