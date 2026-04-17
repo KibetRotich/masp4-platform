@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { RoleProvider } from '@/lib/role-context'
+import AuthButton from '@/components/AuthButton'
 
 export const metadata: Metadata = {
   title: 'MASP IV Data Platform — Solidaridad ECA',
@@ -47,7 +48,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
             </div>
           </div>
-          <SolLogo />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <AuthButton />
+            <SolLogo />
+          </div>
         </header>
 
         {/* ── Nav bar ─────────────────────────────────────────────────────── */}

@@ -1,29 +1,41 @@
 'use client'
 
 import { createContext, useContext, useEffect, useState } from 'react'
+import { supabase } from '@/lib/supabase'
 
 type Role = 'admin' | 'me_officer' | 'viewer'
 
 interface RoleCtx {
   role:     Role
-  canEdit:  boolean   // admin or me_officer
+  canEdit:  boolean
   loading:  boolean
   email:    string | null
 }
 
 const RoleContext = createContext<RoleCtx>({ role: 'viewer', canEdit: false, loading: true, email: null })
 
+async function fetchRole(): Promise<RoleCtx> {
+  try {
+    const d = await fetch('/api/me').then(r => r.json())
+    const role: Role = d.role ?? 'viewer'
+    return { role, canEdit: role === 'admin' || role === 'me_officer', loading: false, email: d.email ?? null }
+  } catch {
+    return { role: 'viewer', canEdit: false, loading: false, email: null }
+  }
+}
+
 export function RoleProvider({ children }: { children: React.ReactNode }) {
   const [ctx, setCtx] = useState<RoleCtx>({ role: 'viewer', canEdit: false, loading: true, email: null })
 
   useEffect(() => {
-    fetch('/api/me')
-      .then(r => r.json())
-      .then(d => {
-        const role: Role = d.role ?? 'viewer'
-        setCtx({ role, canEdit: role === 'admin' || role === 'me_officer', loading: false, email: d.email ?? null })
-      })
-      .catch(() => setCtx({ role: 'viewer', canEdit: false, loading: false, email: null }))
+    fetchRole().then(setCtx)
+
+    // Re-check role whenever auth state changes (login / logout / token refresh)
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(() => {
+      fetchRole().then(setCtx)
+    })
+
+    return () => subscription.unsubscribe()
   }, [])
 
   return <RoleContext.Provider value={ctx}>{children}</RoleContext.Provider>
