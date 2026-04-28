@@ -372,9 +372,10 @@ export default function InstructionsPage() {
           <Card>
             <div style={{ fontSize: '0.62rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '.8px', color: '#888', marginBottom: '.5rem' }}>About the Form</div>
             <div style={{ fontSize: '0.68rem', color: '#333', lineHeight: 1.8 }}>
-              The <strong>MASP IV Farmer Survey V1.1</strong> covers S6.1, S6.2, S2.1, and S2.5 in a single
+              The <strong>MASP IV Farmer Survey V2.0</strong> covers S6.1, S6.2, S2.1, and S2.5 in a single
               combined interview. It is an XLSForm compatible with <strong>KoboToolbox</strong> and ODK Central.
-              Download it from the <a href="/upload" style={{ color: NAVY, fontWeight: 700 }}>Import CSV</a> tab and
+              V2.0 uses <strong>commodity-wise deployment</strong> — one form covers all projects within a commodity,
+              reducing KoboToolbox deployments from 20+ to ~10. Download it from the <a href="/upload" style={{ color: NAVY, fontWeight: 700 }}>Import CSV</a> tab and
               upload to your KoboToolbox account to deploy to enumerators.
             </div>
             <div style={{ marginTop: '.6rem', padding: '.5rem .7rem', background: '#fff3e0', border: '1px solid #ffcc80', fontSize: '0.64rem', color: '#6d4c00' }}>
@@ -385,8 +386,9 @@ export default function InstructionsPage() {
             <div style={{ fontSize: '0.62rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '.8px', color: '#888', marginBottom: '.5rem' }}>Before Deploying</div>
             <div style={{ fontSize: '0.65rem', color: '#555', lineHeight: 1.7 }}>
               <ul style={{ paddingLeft: '1.1rem', margin: 0 }}>
-                <li>Set <code>_project_code</code> to exactly match the code in the Projects table (e.g. <code>KE-ANK-001</code>)</li>
+                <li>Select <code>_commodity</code> first (e.g. Coffee) — the project list filters automatically. Then select <code>_project_code</code> matching your project (e.g. <code>KE-COF-001</code>). Use only codes listed in Targets &amp; Achievements</li>
                 <li>Confirm enumerators select the correct <code>_country</code> from the dropdown</li>
+                <li>Select <code>_survey_round</code>: Baseline (2026), Midline, Endline, or Annual monitoring</li>
                 <li>Enable GPS on all devices before the first interview</li>
                 <li>Run a 3–5 farmer pilot; export and import the pilot CSV to validate before full deployment</li>
                 <li>Enter annual targets in <strong>Targets &amp; Achievements</strong> before starting fieldwork so the extrapolation formula has a denominator</li>
@@ -399,7 +401,7 @@ export default function InstructionsPage() {
               <ol style={{ paddingLeft: '1.1rem', margin: 0 }}>
                 <li>Open your project in KoboToolbox and go to <em>Data → Downloads</em></li>
                 <li>Select <strong>CSV</strong> format, all fields, all versions</li>
-                <li>Click <em>Export</em> and download the file to your computer</li>
+                <li>Click <em>Export</em> and download the file to your computer. In V2.0 the CSV contains all projects within the commodity — the importer handles mixed <code>_project_code</code> values automatically</li>
                 <li>Upload via the <a href="/upload" style={{ color: NAVY, fontWeight: 700 }}>Import CSV</a> tab — select the survey year and click Upload</li>
               </ol>
             </div>
